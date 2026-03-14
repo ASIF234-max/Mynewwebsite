@@ -1,0 +1,183 @@
+<!DOCTYPE html>  <html>  
+<head>  
+<meta charset="UTF-8">  
+<title>ASIF GAMING X KEY SYSTEM</title>  <style>  
+  
+body{  
+background:#0b0f1a;  
+font-family:Arial;  
+display:flex;  
+justify-content:center;  
+align-items:center;  
+height:100vh;  
+color:white;  
+}  
+  
+.card{  
+background:#111827;  
+padding:30px;  
+border-radius:20px;  
+text-align:center;  
+box-shadow:0 0 40px #ff3c00;  
+width:350px;  
+}  
+  
+.logo{  
+width:180px;  
+margin-bottom:15px;  
+filter:drop-shadow(0 0 20px #ff3c00);  
+}  
+  
+.title{  
+font-size:26px;  
+margin-bottom:10px;  
+}  
+  
+.info{  
+background:#1f2937;  
+padding:10px;  
+border-radius:10px;  
+margin:8px 0;  
+}  
+  
+button{  
+margin-top:12px;  
+padding:12px;  
+width:100%;  
+border:none;  
+border-radius:10px;  
+font-size:16px;  
+background:linear-gradient(90deg,#ff3c00,#ff9a00);  
+color:white;  
+cursor:pointer;  
+}  
+  
+.keybox{  
+margin-top:20px;  
+padding:15px;  
+background:black;  
+border-radius:10px;  
+border:1px solid #ff3c00;  
+display:none;  
+}  
+  
+.social img{  
+width:45px;  
+margin:10px;  
+}  
+  
+</style>  </head>  <body>  <div class="card">  <img src="https://i.supaimg.com/82b501d4-66cc-490e-aee7-399dd8027981/542a27b3-d596-4184-a86f-7855bcd5e3fa.jpg" class="logo">  <div class="title">ASIF GAMING X 🔑</div>  <div class="info">🎮 Game : Free Fire</div>  
+<div class="info">📱 Status : 1 Device</div>  
+<div class="info">⏳ Cooldown : 2 Minutes</div>  <button onclick="generate()">GENERATE KEY</button>
+
+<div class="keybox" id="keybox">  <p id="keytext"></p>  <button onclick="copyKey()">COPY KEY</button>
+
+</div>  <div class="social">  <a href="https://youtube.com/@asifgamer3.0?si=HYd0jKQTPKjRAkGP">  
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">  
+</a>  <a href="https://t.me/asifgamingx">  
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">  
+</a>  </div>  </div>  <script>  
+  
+var keys = [  
+"ASIF-VIP-KEYZDVOCG",  
+"ASIF-VIP-KEYZ3TQAI",  
+"ASIF-VIP-KEYXQTV07",  
+"ASIF-VIP-KEYY12JWS",  
+"ASIF-VIP-KEYY2E40V",  
+"ASIF-VIP-KEYXQTV07",  
+"ASIF-VIP-KEYV62CGU",  
+"ASIF-VIP-KEYVW7OX0",  
+"ASIF-VIP-KEYVY7MW6",  
+"ASIF-VIP-KEYXHIKIR",
+"ASIF-VIP-KEYSKN9F6",
+"ASIF-VIP-KEYTRSDW6",
+"ASIF-VIP-KEYU36I9H",
+"ASIF-VIP-KEYPDYFB4",
+"ASIF-VIP-KEYQMCAX7",
+"ASIF-VIP-KEYRIX85Q",
+"ASIF-VIP-KEYSAKEKO",
+"ASIF-VIP-KEYMDOFRX",
+"ASIF-VIP-KEYMDOFRX",
+"ASIF-VIP-KEYMQWYGP",
+"ASIF-VIP-KEYP865ZA",
+"ASIF-VIP-KEYPCD60K",
+"ASIF-VIP-KEYJLX13K",
+"ASIF-VIP-KEYK21Y41",
+"ASIF-VIP-KEYLN4CLJ",
+"ASIF-VIP-KEYHJRRC7",
+"ASIF-VIP-KEYHO4COY",
+"ASIF-VIP-KEYIBD6DL",
+"ASIF-VIP-KEYIH4EU0",
+"ASIF-VIP-KEYFK9VPQ",
+"ASIF-VIP-KEYGTRLLQ",
+"ASIF-VIP-KEYH8AMX4",
+"ASIF-VIP-KEYHBOHC8",
+"ASIF-VIP-KEYA7FDD2",
+"ASIF-VIP-KEYARGERU",
+"ASIF-VIP-KEYDGSSC2",
+"ASIF-VIP-KEYF9NVS8",
+"ASIF-VIP-KEY7GK3AR",
+"ASIF-VIP-KEY9H69W3",
+"ASIF-VIP-KEY9R438J",
+"ASIF-VIP-KEYA1JA4S",
+"ASIF-VIP-KEY3TGWSU",
+"ASIF-VIP-KEY4XWJVO",
+"ASIF-VIP-KEY57B7MK",
+"ASIF-VIP-KEY57MEGW",
+"ASIF-VIP-KEY0OADGE",
+"ASIF-VIP-KEY0U8SLH",
+"ASIF-VIP-KEY1ZIJ41",
+"ASIF-VIP-KEY2R8KN1",
+"ASIF-1HOURS-KEYRUFA70",
+"ASIF-VIP-KEY05TFSJ",
+"ASIF-VIP-KEY0DC7DZ",
+"ASIF-VIP-KEY0O3TWK",
+"ASIF-1HOURS-KEYCFEEZN",
+"ASIF-1HOURS-KEYCND4JQ",
+"ASIF-1HOURS-KEYKW12TM",
+"ASIF-1HOURS-KEYRARNM8",
+];  
+  
+function generate(){  
+  
+var lastTime = localStorage.getItem("keytime");  
+  
+if(lastTime){  
+  
+var now = Date.now();  
+var diff = (now - lastTime) / 1000;  
+  
+if(diff < 120){  
+  
+var wait = Math.floor(120 - diff);  
+  
+alert("⏳ Wait " + wait + " seconds to generate again!");  
+  
+return;  
+  
+}  
+  
+}  
+  
+var key = keys[Math.floor(Math.random()*keys.length)];  
+  
+localStorage.setItem("asifkey",key);  
+localStorage.setItem("keytime",Date.now());  
+  
+document.getElementById("keybox").style.display="block";  
+document.getElementById("keytext").innerHTML="🔑 YOUR KEY : <br><b>"+key+"</b>";  
+  
+}  
+  
+function copyKey(){  
+  
+var key = localStorage.getItem("asifkey");  
+  
+navigator.clipboard.writeText(key);  
+  
+alert("Key Copied!");  
+  
+}  
+  
+</script>  </body>  
+</html>
